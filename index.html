@@ -2,6 +2,9 @@
 layout: default
 title: Home
 ---
+<h1>
+  Welcome
+</h1>
 {% for post in site.posts %}
   <p><a href="{{ post.url }}">{{ post.date | date_to_string }} - {{ post.title }}</a></p>
 {% endfor %}
