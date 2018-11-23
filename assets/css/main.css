@@ -34,14 +34,19 @@ a {
     color: black;
 }
 
+a:hover {
+    text-decoration: underline;
+}
 
-a.current-page-link {
+
+.current-page-link {
     color: rgb(255, 255, 255);
     background-color: lightcoral;
 }
 
+
+
 h1 {
-    font-size: 3em;
     font-family: Arial, sans-serif;
 }
 
@@ -51,6 +56,11 @@ p {
 
 .copyright {
     color: grey;
+}
+
+ul li {
+    line-height: 1.5em;
+    list-style: none;
 }
 
 footer {

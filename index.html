@@ -3,9 +3,15 @@ layout: default
 title: Home
 active: home
 ---
-<h1>
-  Welcome
-</h1>
-{% for post in site.posts %}
-  <p><a href="{{ post.url }}">{{ post.date | date_to_string }} - {{ post.title }}</a></p>
-{% endfor %}
+
+<h1>Welcome</h1>
+<p>I write this blog to practice. Here are the latest entries:</p>
+<ul>
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ post.url }}">
+            {{ post.title }}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
