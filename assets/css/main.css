@@ -76,3 +76,8 @@ footer span {
     white-space: nowrap;
 }
 
+.post-title {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+}
