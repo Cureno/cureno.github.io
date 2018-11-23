@@ -81,3 +81,23 @@ footer span {
     padding-bottom: 1em;
     text-align: center;
 }
+
+.spring-disclaimer {
+    padding-top: 1em;
+    padding-left: 3em;
+    padding-right: 3em;
+    padding-bottom: 1em;
+    border-radius: 30%;
+    border-top: 0.1em solid #d5d5d5;
+    border-bottom: 0.1em solid #d5d5d5;
+    
+}
+
+.spring-disclaimer :first-child {
+    font-style: italic;
+}
+
+.spring-disclaimer a {
+    font-weight: bold;
+    font-style: italic;
+}
