@@ -1,7 +1,8 @@
 <nav>
-  {% for item in site.data.navigation %}
-    <a href="{{ item.link }}" {% if page.url == item.link %}class="current-page-link"{% endif %}>
-      {{ item.name }}
-    </a>
-  {% endfor %}
+  
+  <a {% if page.active=="home" or layout.active=="home" %}class="current-page-link"{% endif %} href="/">Home</a>
+  <a {% if page.active=="blog" or layout.active=="blog" %}class="current-page-link"{% endif %} href="/blog/">Blog</a>
+  <a {% if page.active=="about" or layout.active=="about" %}class="current-page-link"{% endif %} href="/about/">About</a>
+  <a {% if page.active=="software" or layout.active=="software" %}class="current-page-link"{% endif %} href="/software/">Software</a>
+  
 </nav>
