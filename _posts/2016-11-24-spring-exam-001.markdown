@@ -1,0 +1,38 @@
+---
+layout: spring-exam
+categories: spring-exam
+title: What is dependency injection and what are the advantages?
+---
+
+Dependency injection is an alias for the Inversion of Control principle (IoC).
+
+Let’s start with defining what dependencies are. An object’s dependencies are all those objects that it needs to work as intended, or put it another way
+
+Objects’ dependencies are the other objects they work with.
+
+Dependency injection is a way to reduce the responsibility of objects. This is done by separating out the logic for the locating / instantiating of dependencies, and centralizing it in a so-called IoC container. Spring is such a container, and the objects it manages are called beans.
+
+It deals with how beans get references to other objects.
+
+In order for this to work, they must be marked as beans and then define their dependencies in a certain way. They may make use of constructor arguments, or arguments to a factory method or define properties that are set on the object instance.
+
+Which one to prefer? Generally prefer constructor injection and avoid using private class properties, as injecting against private properties requires circumventing the public/private boundaries of classes via reflection.
+
+What are the advantages of this approach?
+
+Inversion of Control allows dependencies to be injected at runtime, they don’t have to be predetermined, this means cleaner, more testable code, particularly when the dependencies are on abstractions (interfaces, abstract classes), which allow for injecting stub or mock implementations.
+
+For illustration, beans should look something like this:
+
+{% highlight java %}
+@Service
+public class Book {
+  private Publisher publisher;
+  
+  public Book(Publisher publisher) {
+    this.publisher = publisher;
+  }
+}
+{% endhighlight %}
+
+P.S.: After writing this "summary", I realized that it is not only not an efficient way to prepare for an exam, but also not very rewarding as an intellectual exercise either. So I decided to abandon this approach.
