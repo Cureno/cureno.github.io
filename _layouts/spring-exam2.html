@@ -1,0 +1,21 @@
+---
+layout: spring-exam
+---
+
+<h4>These questions are ordered by categories</h4>
+<p>
+    <i>
+        Let's <strong>hover</strong> or <strong>tab</strong> or
+        <strong>click</strong> on the questions to reveal the answer.
+    </i>
+</p>
+
+<div class="spring-exam-grid">
+    {% assign i = 5 %} {% for q_and_a in site.data.spring-exam-questions %} {%
+    assign i = i | plus:1 %}
+    <div class="spring-exam-item">
+        <h4 type="text" class="question" tabindex="{{ i }}">{{ q_and_a.q }}</h4>
+        <p class="answer">{{ q_and_a.a }}</p>
+    </div>
+    {% endfor %}
+</div>

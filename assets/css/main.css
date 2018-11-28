@@ -101,3 +101,41 @@ footer span {
     font-weight: bold;
     font-style: italic;
 }
+
+.spring-exam-grid {
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 1em;
+}
+
+.spring-exam-item {
+    --main-bg-color: rgb(91.4%, 93.3%, 94.8%);
+    --answer-color: darkgreen;
+    background-color: var(--main-bg-color);
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
+    border: solid black 1px;
+}
+
+.spring-exam-item > .question {
+    padding: 1em;
+}
+
+.spring-exam-item > .question:hover,
+.spring-exam-item > .question:focus {
+    background-color: white;
+    border-radius: 1em;
+    
+}
+
+.spring-exam-item > .question:focus ~ .answer,
+.spring-exam-item .question:hover + .answer {
+    color: var(--answer-color);
+    text-decoration: lightgreen underline;
+}
+
+.spring-exam-item > .answer {
+    color: var(--main-bg-color);
+}
+
