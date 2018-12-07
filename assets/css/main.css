@@ -102,15 +102,8 @@ footer span {
     font-style: italic;
 }
 
-.spring-exam-grid {
-    display: inline-grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 1em;
-}
-
 .spring-exam-item {
     --main-bg-color: rgb(91.4%, 93.3%, 94.8%);
-    --answer-color: darkgreen;
     background-color: var(--main-bg-color);
     padding-left: 1em;
     padding-right: 1em;
@@ -120,22 +113,31 @@ footer span {
 
 .spring-exam-item > .question {
     padding: 1em;
+    transition: background-color 0.3s ease-in,
+                border-radius 1s ease-in,
+                box-shadow 0.3s linear;
 }
 
 .spring-exam-item > .question:hover,
 .spring-exam-item > .question:focus {
     background-color: white;
     border-radius: 1em;
+    box-shadow: 0.6em 0.7em 0.7em grey;
+    transition: background-color 0.3s ease-in,
+                box-shadow 0.3s linear;
+}
+
+.spring-exam-item > .answer {
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
     
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
 }
 
 .spring-exam-item > .question:focus ~ .answer,
 .spring-exam-item .question:hover + .answer {
-    color: var(--answer-color);
-    text-decoration: lightgreen underline;
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
 }
-
-.spring-exam-item > .answer {
-    color: var(--main-bg-color);
-}
-

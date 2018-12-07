@@ -1,0 +1,9 @@
+- q: Is this particular layout good enough? 
+  a: Maybe. But I would recommend polishing it just a little more.
+    
+- q: How to do a proper CSS transition?
+  multiple:
+    - "transition: margin-right 2s ease-in-out .5s;"
+    - "transition: property name | duration | timing function | delay"
+      
+    

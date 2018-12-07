@@ -10,12 +10,18 @@ layout: spring-exam
     </i>
 </p>
 
-<div class="spring-exam-grid">
+<div>
     {% assign i = 5 %} {% for q_and_a in site.data.spring-exam-questions %} {%
     assign i = i | plus:1 %}
     <div class="spring-exam-item">
-        <h4 type="text" class="question" tabindex="{{ i }}">{{ q_and_a.q }}</h4>
-        <p class="answer">{{ q_and_a.a }}</p>
+        <h4 class="question" tabindex="{{ i }}">{{ q_and_a.q }}</h4>
+        <p class="answer">
+            {{ q_and_a.a }}
+            {% for a in q_and_a.multiple %}
+                {{ a }}<br>
+            {% endfor %}
+        </p>
+            
     </div>
     {% endfor %}
 </div>
