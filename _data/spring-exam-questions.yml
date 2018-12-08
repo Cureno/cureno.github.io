@@ -12,3 +12,6 @@
 
 - q: What is an interface and what are the advantages of making use of them in Java? Why are they recommended for Spring beans?
   a: From Wikipedia, again. An interface is a shared boundary across which two or more separate components of a computer system exchange information. From Oracle docs, interfaces form a contract between the class and the outside world, and this contract is enforced at build time by the compiler. From Stackoverflow, it separates what the caller expects from the actual implementation. Essentially they enable polymorphic behavior. This results in increased testability, because implementations can be swapped easily.
+
+- q: What is meant by "application-context"?
+  a: From Spring docs. The ApplicationContext interface represents the Spring IoC container and is responsible for instantiating, configuring, and assembling the beans. There are several implementations of the interface.
