@@ -7,3 +7,5 @@
     - "transition: property name | duration | timing function | delay"
       
     
+- q: What is a pattern? What is an anti-pattern? Is dependency injection a pattern?
+  a: According to Wikipedia it is a general, reusable solution to a commonly occurring problem within a given context in software design, not something that can be transformed directly into source or machine code. A formalized best practice. An anti-pattern, on the other hand, is common response to a recurring problem that is usually ineffective and risks highly counterproductive. Dependency injection is a pattern, it relieves objects from supplying their own dependencies, how this is done can be specified in separate configuration files, so applications can easily support different configurations.
