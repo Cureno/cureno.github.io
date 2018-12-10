@@ -141,3 +141,12 @@ footer span {
     opacity: 1;
     transition: opacity 0.3s ease-in;
 }
+
+.draft {
+    background-color: lightcoral;
+}
+
+.draft::before, .draft::after {
+    content: "<<draft>>";
+    background: white;
+}

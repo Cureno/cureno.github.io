@@ -15,13 +15,22 @@ layout: spring-exam
     assign i = i | plus:1 %}
     <div class="spring-exam-item">
         <h4 class="question" tabindex="{{ i }}">{{ q_and_a.q }}</h4>
+        {% if q_and_a.draft %}
+        <p class="draft answer">
+            {{ q_and_a.a }}
+            {% for a in q_and_a.multiple %}
+                {{ a }}<br>
+            {% endfor %}
+        </p>
+        {% else %}
         <p class="answer">
             {{ q_and_a.a }}
             {% for a in q_and_a.multiple %}
                 {{ a }}<br>
             {% endfor %}
         </p>
-            
+        {% endif %}
+
     </div>
     {% endfor %}
 </div>
