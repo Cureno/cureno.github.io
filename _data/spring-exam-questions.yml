@@ -21,3 +21,7 @@
 - q: What is the concept of a "container" and what is its life cycle?
   a: The Spring Container combines business objects (POJOs) with configuration metadata and produces a fully configured system ready for use. It does this in the following steps. 1. Read and parse the Bean definitions (XML, annotations, Java configuration, Groovy DSL), 2. Process the BeanFactoryPostProcessors, 3. Call constructor, instantiate beans, 4. Inject dependencies via setter methods, 5. Inject the required beans defined by the "*Aware" interfaces, 6. Execute postProcessBeforeInitialization of BeanPostProcessor, 7. Call initialization callbacks (InitializingBean's afterPropertiesSet or a custom init-method), 8. Call postProcessor.....
   draft: true
+
+- q: How are you going to create a new instance of an ApplicationContext?
+  a: 'ApplicationContext is an interface, for which Spring already supplies implementations, like ClassPathXmlApplicationContext or FileSystemApplicationContext. But it is also possible to create ApplicationContext instances declaratively by using a ContextLoader. This way an ApplicationContext is registered by using the ContextLoaderListener from the org.springframework.web.context package. And the both the context and the ContextLoaderListener are defined in xml files. See: <a href="https://docs.spring.io/spring/docs/5.1.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#context-create">https://docs.spring.io/spring/docs/5.1.4.BUILD-SNAPSHOT/spring-framework-reference/core.html#context-create</a>'
+  draft: true
