@@ -31,3 +31,11 @@
 
 - q: How are you going to create an ApplicationContext in an integration test?
   a: The @ContextConfiguration annotation defines class-level metadata that is used to determine how to load and configure an ApplicationContext for integration tests. Specifically, @ContextConfiguration declares the application context resource locations (XML or Groovy scripts on the classpath, sometimes in the file system) or the annotated classes (mostly classes with @Configuration, sometimes also components) used to load the context.
+
+- q: What is the preferred way to close an application context? Does Spring Boot do this for you?
+  multiple:
+    - If the Spring IoC container is a non-web application environment, register a shutdown hook with the JVM by using the ConfigurableApplicationContext’s registerShutdownHook() method, this ensures that all the relevant (implemented and configured) destroy methods (such as the DisposableBean interface or the @PreDestroy annotation) are called on the singleton beans, and all resources are released.
+    - 'ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(“beans.xml”);
+	  context.registerShutdownHook();'
+    - If a Spring application is bootstrapped and launched from a Java main method via the static run method org.springframework.boot.SpringApplication class. From Spring Boot docs. Each SpringApplication registers a shutdown hook with the JVM to ensure that the ApplicationContext closes gracefully on exit. All the standard Spring lifecycle callbacks (such as the DisposableBean interface or the @PreDestroy annotation) can be used.
+  draft: true
